@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercises</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+    
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        //5) Programa una función que invierta las palabras de una cadena de texto, 
+        //pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+
+
+        function revertChar(text){
+            let x = text.length;
+            let invertText = "";
+            //console.log(x)
+
+            while(x >= 0){
+                invertText = invertText + text.charAt(x);
+                x--;
+            }
+            console.log(invertText);
+            //return invertText;
+            
+        }
+        //revertChar("Hola mundo");
+
+        function revertCharTwo(text){
+            let revertText = text.split("").reverse().join("");
+
+            console.log(revertText)
+        }
+        //revertCharTwo("Hola Mundo")
+
+
+        function revertChart3(text){
+            let newChar = "";
+
+            for(let i = text.length - 1; i >=0; i--){
+                newChar += text[i];
+            }
+
+            console.log(newChar);
+        }
+        //revertChart3("Hola MUNDO");
+
+
+        //6) Programa una función para contar el número de veces que se repite 
+        //una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") devolverá 2.
+
+        function countWords(countW){
+            let countT = 0;
+            let positionT = countW.indexOf("mundo");
+
+            while(positionT != -1){
+                countT++;
+                positionT = countW.indexOf("mundo", positionT+1);
+                
+            }
+            console.log(countT);
+            
+        }
+        countWords("hola mundo, adios mundo, hola mundo, adios mundo");
+
+        //7) Programa una función que valide si una palabra o frase dada, 
+        //es un palíndromo (que se lee igual en un sentido que en otro), 
+        //pe. mifuncion("Salas") devolverá true.
+
+
+        //8) Programa una función que elimine cierto patrón de caracteres 
+        //de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
+        //devolverá  "1, 2, 3, 4 y 5.
+
+    </script>
+</body>
+
+
+
+
+</html>
