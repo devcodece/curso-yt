@@ -113,3 +113,33 @@ $whatIsDOM.innerHTML = text;
 //Reemplazar todo la etiqueta, por la nueva
 //Visualmente no hay diferencia
 $whatIsDOM.outerHTML = text;
+
+
+
+
+////////////67 DOM Traversing: Recorriendo el DOM
+
+const $cards = document.querySelector(".cards");
+
+//Mostrando los nodos hijos
+    //$cards.childNodes
+//Haciendo referencia a los hijos de cards
+    //$cards.children
+//Haciendo referencia a un elemento especifico
+    //$cards.children[2]
+//Obteniendo el primero y ultimo elemento hijo
+    //$cards.firstElementChild
+    //$cards.lastElementChild
+//Obteniendo el hermano anterior y posterior
+    //$cards.previousElementSibling
+    //$cards.nextElementSibling
+//Metodo nuevo closest(), va a buscar el padre mas cercano del tipo de selector
+    //$cards.children[3].closest("section")
+
+
+
+////////////68 DOM Traversing: Creando Elementos y Fragmentos
+
+
+
+
