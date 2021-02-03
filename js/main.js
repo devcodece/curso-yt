@@ -119,7 +119,7 @@ $whatIsDOM.outerHTML = text;
 
 ////////////67 DOM Traversing: Recorriendo el DOM
 
-const $cards = document.querySelector(".cards");
+//const $cards = document.querySelector(".cards");
 
 //Mostrando los nodos hijos
     //$cards.childNodes
@@ -139,6 +139,92 @@ const $cards = document.querySelector(".cards");
 
 
 ////////////68 DOM Traversing: Creando Elementos y Fragmentos
+
+//Creando una tarjeta de manera dinamica
+//Definiendo las variables necesarias
+const $figure = document.createElement("figure"),
+$img = document.createElement("img"),
+$figcaption = document.createElement("figcaption"),
+$figcaptionText = document.createTextNode("Animals"),
+$cards = document.querySelector(".cards"),
+$figure2 = document.createElement("figure");
+
+//Agregando cada etiqueta al DOM
+$img.setAttribute("src","https://placeimg.com/200/200/animals");
+$img.setAttribute("alt","Animals");
+$figure.classList.add("card");
+$figcaption.appendChild($figcaptionText);
+$figure.appendChild($img);
+$figure.appendChild($figcaption);
+$cards.appendChild($figure);
+
+//Tambien se puede crear contenido dinamico
+//con innerHTML
+
+$figure2.innerHTML = `
+<img src="https://placeimg.com/200/200/people" alt="People">
+<figcaption>People</figcaption>
+`;
+
+$figure2.classList.add("card");
+$cards.appendChild($figure2);
+
+
+//Insertando una lista
+const seasons = ["Primavera","Otoño","Verano","Invierno"],
+$ul = document.createElement("ul");
+
+document.write("<h3>Seasons</h3>");
+document.body.appendChild($ul);
+
+seasons.forEach(el => {
+    const $li = document.createElement("li");
+    $li.textContent = el;
+    $ul.appendChild($li);
+});
+
+
+//Segunda forma de insertar una lista
+const continents = ["Africa","America","Asia","Europa","Oceania"],
+$ul2 = document.createElement("ul");
+
+document.write("<h3>Continents</h3>");
+document.body.appendChild($ul2);
+
+//Antes habia que inicializar el innerHTML con una cadena vacia
+//$ul2.innerHTML = "";
+
+continents.forEach(el => (
+    $ul2.innerHTML += `<li>${el}</li>`
+));
+
+
+//Para renderizar muchos elementos es necesario 
+//utilizar fragment
+
+const months = [
+    "Enero","Febrero","Marzo",
+    "Abril","Mayo","Junio",
+    "Julio","Agosto","Septiembre",
+    "Octubre","Noviembre","Diciembre",
+],
+$ul3 = document.createElement("ul"),
+$fragment = document.createDocumentFragment();
+
+months.forEach(el => {
+    const $li =  document.createElement("li");
+    $li.textContent = el;
+    $fragment.appendChild($li);
+});
+
+document.write("<h3>Monts</h3>");
+$ul3.appendChild($fragment);
+document.body.appendChild($ul3);
+
+
+
+
+
 
 
 
